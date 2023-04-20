@@ -20,14 +20,14 @@ function Movie() {
     setMovie(data);
 
     const image = new Image();
-    image.src = movie.Poster;
+    image.src = data.Poster;
 
-    console.log(image);
     image.onload = () => {
       if (mountedRef.current) {
         setImg(image);
       }
     };
+
     return () => {
       mountedRef.current = false;
     };
