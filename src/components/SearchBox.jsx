@@ -7,7 +7,6 @@ function SearchBox() {
   let navigate = useNavigate();
 
   function handleKeyPress(value) {
-    console.log("this");
     navigate("/movies", { state: { searchVal: value } });
   }
 

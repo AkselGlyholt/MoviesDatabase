@@ -1,6 +1,6 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
-import { Link, useLocation } from "react-router-dom";
+import { useLocation } from "react-router-dom";
 import { FiSearch } from "react-icons/fi";
 import { AiOutlineLoading3Quarters } from "react-icons/ai";
 
@@ -13,13 +13,10 @@ function Movies() {
   const { state } = useLocation();
 
   const [movies, setMovies] = useState([]);
-  const [search, setSearch] = useState(null);
 
-  
   async function fetchMovies(searchVal) {
-    document.querySelector(".search--loading").style.display = "flex"
+    document.querySelector(".search--loading").style.display = "flex";
 
-    setSearch(searchVal);
     const newSearch = searchVal.replace(/\s/g, "+");
     const { data } = await axios.get(`${apiLink}&s=${newSearch}&plot=full`);
 
@@ -28,19 +25,17 @@ function Movies() {
     } else {
       setMovies([]);
     }
-    document.querySelector(".search--loading").style.display = "none"
+    document.querySelector(".search--loading").style.display = "none";
   }
 
   useEffect(() => {
-    console.log(state);
-
     if (state) {
       if (state.searchVal) {
         fetchMovies(state.searchVal);
         window.history.replaceState({}, document.title);
       }
     }
-  }, []);
+  }, [state]);
 
   return (
     <>
@@ -52,7 +47,6 @@ function Movies() {
           type="text"
           placeholder="Search for a Movie, TV show or Documentary"
           className="search--input"
-          onChange={(event) => setSearch(event.target.value)}
           onKeyPress={(event) =>
             event.key === "Enter" && fetchMovies(event.target.value)
           }
@@ -63,14 +57,14 @@ function Movies() {
           <AiOutlineLoading3Quarters className="search--loading-icon" />
         </div>
         {movies.map((movie) => (
-          <Movie movie={movie} />
+          <Movie movie={movie} key={movie.imdbID} />
         ))}
 
         {(!movies || !movies.length) && (
           <div className="movies__img--wrapper-empty">
             <img
               src={emptyImage}
-              alt="Empty Image"
+              alt="No Movies"
               className="movies__img-empty"
             />
             <h1 className="movies__img-empty--title">
