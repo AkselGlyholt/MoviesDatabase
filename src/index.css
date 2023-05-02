@@ -584,6 +584,14 @@ footer {
   .movie__plot {
     font-size: 16px;
   }
+
+  .features__points--container {
+    flex-direction: column;
+  }
+
+  .feature__point {
+    margin: 12px 0;
+  }
 }
 
 @media (max-width: 700px) {
@@ -630,5 +638,25 @@ footer {
 
   .movie__plot {
     width: 100%;
+  }
+}
+
+@media (max-width: 420px) {
+  .movies__searching--wrapper {
+    width: 300px;
+  }
+
+  .searching--title {
+    font-size: 22px;
+  }
+}
+
+@media (max-width: 310px) {
+  .movies__searching--wrapper {
+    width: 250px;
+  }
+
+  .searching--title {
+    font-size: 18px;
   }
 }
