@@ -24,6 +24,10 @@ nav {
   padding: 16px 12px;
 }
 
+.blue {
+  color: #01b4e4;
+}
+
 .nav--content {
   width: 100%;
   max-width: 1400px;
@@ -136,6 +140,66 @@ nav {
   color: rgb(33, 41, 53);
   cursor: pointer;
   width: 130px;
+}
+
+.features--container {
+  display: flex;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding-top: 60px;
+}
+
+.features__points--container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  max-width: 1000px;
+  padding-top: 40px;
+}
+
+.features__title {
+  font-size: 32px;
+}
+
+.feature__point {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.feature__title {
+  font-size: 20px;
+  margin-bottom: 16px;
+}
+
+.feature__para {
+  font-size: 16px;
+  font-weight: 400;
+  max-width: 250px;
+  text-align: center;
+  line-height: 24px;
+}
+
+.feature__icon--wrapper {
+  border: 2px solid #01b3e452;
+  width: 96px;
+  height: 96px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 4px;
+  margin-bottom: 24px;
+}
+
+.feature--icon {
+  font-size: 36px;
+  color: #01b4e4;
 }
 
 /*
@@ -383,6 +447,7 @@ Movie Info
 .movies__img--wrapper-empty {
   width: 500px;
   padding-top: 120px;
+  margin-bottom: 40px;
 }
 
 .movies__img-empty--title {
@@ -426,6 +491,54 @@ Movie Info
   height: 22px;
   width: 300px;
   margin-top: 8px;
+}
+
+.movies__searching--container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 40px;
+  margin-bottom: 40px !important;
+}
+
+.movies__searching--wrapper {
+  width: 400px;
+}
+
+.searching--title {
+  font-size: 26px;
+  font-weight: 500;
+  padding-top: 32px;
+}
+
+/*
+
+FOOTER
+
+*/
+
+footer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #242424;
+  padding-top: 32px;
+  margin-top: 80px;
+}
+
+.footer__img--wrapper {
+  width: 250px;
+  filter: brightness(200);
+}
+
+.footer__copyright {
+  font-size: 16px;
+  font-weight: 400;
+  color: white;
+  padding-top: 36px;
+  padding-bottom: 36px;
 }
 
 @media (max-width: 1150px) {

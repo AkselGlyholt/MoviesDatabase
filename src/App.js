@@ -3,6 +3,7 @@ import Landing from "./pages/Landing.jsx";
 import Nav from "./components/Nav.jsx";
 import Movies from "./pages/Movies.jsx";
 import Movie from "./pages/Movie.jsx";
+import Footer from "./components/Footer.jsx";
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
           <Route path="/movies" element={<Movies />}></Route>
           <Route path=":id" element={<Movie />}></Route>
         </Routes>
+        <Footer />
       </div>
     </Router>
   );
